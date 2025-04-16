@@ -1,0 +1,27 @@
+* Kwin effect Blish HUD shader
+Applies a shader to the main window of [[https://blishhud.com][Blish HUD]] to make black pixels transparent.
+
+Based on [https://github.com/natask/kwin-effect-smart-invert]
+** Dependencies
+These might do the trick
+- Arch based ::
+#+begin_src bash
+sudo pacman -S extra-cmake-modules kwin kf5
+#+end_src
+- Debian based (Ubuntu, Kubuntu, KDE Neon) ::
+#+begin_src bash
+sudo apt install git cmake g++ gettext extra-cmake-modules qttools5-dev libqt5x11extras5-dev libkf5configwidgets-dev libkf5crash-dev libkf5globalaccel-dev libkf5kio-dev libkf5notifications-dev kinit-dev kwin-dev 
+#+end_src
+- Fedora based ::
+#+begin_src bash
+
+sudo dnf install git cmake gcc-c++ extra-cmake-modules kwin-devel qt6-qtbase-devel kf6-kconfigwidgets-devel kf6-kcmutils-devel libepoxy-devel wayland-devel
+
+#+end_src
+** Building
+#+begin_src bash
+git clone https://github.com/FloFri/kwin-blishhud-shader.git
+cd kwin-blishhud-shader
+mkdir -p build && cd build
+cmake .. && make && sudo make install
+#+end_src
